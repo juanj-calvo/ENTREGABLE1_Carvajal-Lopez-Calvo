@@ -1,8 +1,8 @@
 from cgi import print_exception
 from django.shortcuts import render
 from multiprocessing import context
-from productos.model import Productos
-from proyecto_app.forms import formulario_products , formulario_usuarios
+from productos.model import Productos , Usuarios , Blog
+from proyecto_app.forms import formulario_products , formulario_usuarios , formulario_blog
 
 # Create your views here.
 
@@ -33,7 +33,7 @@ def create_usuario(request):
     if request.method == 'POST':
         form = formulario_usuarios(request.POST)
         if form.is_valid():
-            Productos.objects.create(
+            Usuarios.objects.create(
                 name = form.cleaned_data['name'],
                 id = form.cleaned_data['id'],
                 password = form.cleaned_data['password'],
@@ -48,3 +48,22 @@ def create_usuario(request):
         context = {'form': form}
         return render(request,'new_usuario.html', context=context)
 
+
+def create_blog(request):
+
+    if request.method == 'POST':
+        form = formulario_blog(request.POST)
+        if form.is_valid():
+            Blog.objects.create(
+                title = form.cleaned_data['title'],
+                autor = form.cleaned_data['autor'],
+                date = form.cleaned_data['date'],
+                decription = form.cleaned_data['description']
+            )
+            return redirect(lista_blog)
+
+
+    elif request.method == 'GET':
+        form = formulario_blog()
+        context = {'form': form}
+        return render(request,'new_blog.html', context=context)
