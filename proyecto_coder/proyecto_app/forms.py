@@ -9,7 +9,7 @@ class formulario_products(forms.Form):
     description = forms.CharField(max_length=400)
 
 
-class fomulario_usuarios(forms.Form):
+class formulario_usuarios(forms.Form):
 
     name = forms.CharField(max_length=50)
     password = forms.IntegerField()
