@@ -67,3 +67,10 @@ def create_blog(request):
         form = formulario_blog()
         context = {'form': form}
         return render(request,'new_blog.html', context=context)
+
+
+def search_product(request):
+    search = request.GET['search']
+    product = Productos.objects.filter(name__icontains=search)
+    context = {'product': product}
+    return render(request, 'search_product.html', context=context)
