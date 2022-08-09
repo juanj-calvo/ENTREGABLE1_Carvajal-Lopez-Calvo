@@ -74,3 +74,10 @@ def search_product(request):
     product = Productos.objects.filter(name__icontains=search)
     context = {'product': product}
     return render(request, 'search_product.html', context=context)
+
+
+def search_usuario(request):
+    search = request.GET['search']
+    product = Usuarios.objects.filter(name__icontains=search)
+    context = {'product': product}
+    return render(request, 'search_usuario.html', context=context)
