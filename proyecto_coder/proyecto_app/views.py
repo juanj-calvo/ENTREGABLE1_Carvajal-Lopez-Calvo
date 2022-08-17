@@ -91,3 +91,23 @@ def search_blog(request):
     return render(request, 'search_blog.html', context=context)
 
 
+def lista_productos(request):
+    celulares = Celphone.objects.all()
+    context= {
+        'celulares':celulares
+    }
+    return render(request,'celulares_1.html',context=context)
+
+def lista_usuarios(request):
+    usuarios = Usuarios.objects.all()
+    context= {
+        'usuarios':usuarios
+    }
+    return render(request,'usuarios_1.html',context=context)
+
+def lista_blog(request):
+    blog = Blog.objects.all()
+    context= {
+        'blog':blog
+    }
+    return render(request,'blog_1.html',context=context)
