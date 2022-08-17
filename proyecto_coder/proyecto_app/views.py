@@ -1,5 +1,5 @@
 from cgi import print_exception
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from multiprocessing import context
 from proyecto_app.models import Celphone , Usuarios , Blog
 from proyecto_app.forms import formulario_products , formulario_usuarios , formulario_blog
@@ -72,7 +72,7 @@ def create_blog(request):
 
 def search_product(request):
     search = request.GET['search']
-    product = Productos.objects.filter(name__icontains=search)
+    product = Celphone.objects.filter(name__icontains=search)
     context = {'product': product}
     return render(request, 'search_product.html', context=context)
 
