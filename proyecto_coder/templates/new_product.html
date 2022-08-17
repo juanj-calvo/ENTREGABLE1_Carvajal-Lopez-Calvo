@@ -1,4 +1,4 @@
-{% extends 'base.htlm' %}
+{% extends 'base.html' %}
 
 {% block titulo %}
 
@@ -6,7 +6,7 @@ formulario carga products
 
 {% endblock %}
 
-{% block contenido_que_varia %}
+{% block contenido_que_cambia %}
 
 <form action="" method="POST">
 {% csrf_token %}

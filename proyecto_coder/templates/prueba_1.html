@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+
+prueba 1
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    que paso aqui ?????
+    <h1> PRUEBA 1 </h1>
+    <h2>  que sera </h2>
+    <h2>{{prueba}}</h2>
+
+    {%for elemento in lista%}
+        {% if elemento > 2 %}
+            <h2 style="color: blue;">AZUL {{elemento}}</h2>
+        {% elif elemento > 1%}
+            <h2 style="color: red">ROJO {{elemento}}</h2>
+        {% else %}
+        <h3>prueba de lista en bucle for </h3>
+            <h2>NEGRO {{elemento}}</h2>
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock %}

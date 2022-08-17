@@ -1,7 +1,7 @@
 from cgi import print_exception
 from django.shortcuts import render
 from multiprocessing import context
-from productos.model import Productos , Usuarios , Blog
+from proyecto_app.models import Celphone , Usuarios , Blog
 from proyecto_app.forms import formulario_products , formulario_usuarios , formulario_blog
 
 # Create your views here.
@@ -11,7 +11,7 @@ def create_product(request):
     if request.method == 'POST':
         form = formulario_products(request.POST)
         if form.is_valid():
-            Productos.objects.create(
+            Celphone.objects.create(
                 name = form.cleaned_data['name'],
                 id = form.cleaned_data['id'],
                 price = form.cleaned_data['price'],
@@ -38,6 +38,7 @@ def create_usuario(request):
                 id = form.cleaned_data['id'],
                 password = form.cleaned_data['password'],
                 email = form.cleaned_data['Email'],
+                role = form.cleaned_data['role'],
                 
             )
             return redirect(lista_usuarios)
@@ -56,7 +57,7 @@ def create_blog(request):
         if form.is_valid():
             Blog.objects.create(
                 title = form.cleaned_data['title'],
-                autor = form.cleaned_data['autor'],
+                author = form.cleaned_data['autor'],
                 date = form.cleaned_data['date'],
                 decription = form.cleaned_data['description']
             )
@@ -88,3 +89,5 @@ def search_blog(request):
     blog = Blog.objects.filter(name__icontains=search)
     context = {'blog': blog}
     return render(request, 'search_blog.html', context=context)
+
+
