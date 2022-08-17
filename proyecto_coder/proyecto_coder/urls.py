@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from proyecto_coder.views import prueba_1
-from proyecto_app.views import create_product, create_usuario ,create_blog, search_product , search_usuario , search_blog
+from proyecto_app.views import create_product, create_usuario ,create_blog, search_product , search_usuario , search_blog, lista_usuarios, lista_productos,lista_blog
 
 
 urlpatterns = [
@@ -28,4 +28,7 @@ urlpatterns = [
     path('search-product/',search_product, name= 'search_product'),
     path('search-usuario/', search_usuario, name= 'search_usuario'),
     path('search-blog/',search_blog, name= 'search_blog'),
+    path('lista_productos/',lista_productos, name= 'lista_productos'),
+    path('lista_usuarios/', lista_usuarios, name= 'lista_usuarios'),
+    path('lista_blog/',lista_blog, name= 'lista_blog'),
 ]
