@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Nombre-Tienda
+{% endblock %}
+
+{% block contenido_que_varia %}
+<div id="nosotros" class="px-4 pt-2 my-5 text-center border-bottom">
+    <h1 class="display-4 fw-bold">Sobre Nosotros</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Texto-Tienda</p>
+    </div>
+    <div class="overflow-hidden" style="max-height: 40vh;">
+        <div class="container px-5">
+            <img src="https://larepublica.pe/resizer/K_CuBjd--qYEStWKKTCfXf_4X5U=/1250x735/top/smart/cloudfront-us-east-1.images.arcpublishing.com/gruporepublica/FKIDDOTHRZF65F6ZROXCCGBNLY.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Empieza Ahora" loading="lazy">
+        </div>
+    </div>
+</div>
+<div id="contacto" class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 d-flex flex-column align-items-center">
+            <h2 class="display-4 fw-bold lh-1 mb-3">¿Tienes alguna duda de nuestro servicio?</h2>
+            <a class="boton mt-4 mb-3 text-center" href="">Contactanos</a>
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5">
+            <img src="https://st2.depositphotos.com/3895623/5589/v/600/depositphotos_55897057-stock-illustration-questionman.jpg" class="d-block mx-lg-auto img-fluid" alt="Contactanos">
+        </div>
+    </div>
+</div>
+{% endblock %}
