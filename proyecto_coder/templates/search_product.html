@@ -2,16 +2,32 @@
 
 {% block titulo %}
 
-    busqueda de productos
+    busqueda de celulares
 
 {% endblock %}
 
 {% block contenido_que_cambia %}
 
-    {% for producto in product %}
+<h1>no se ve nada</h1>
+<h2>esta es la busqueda de productos</h2>
 
 
-        <h1>completar....</h1>
+    {% for product in product %}
+
+
+<h2> el nombre del producto es: {{product.name}}</h2>
+<h2> el precio del producto es: {{product.price}}</h2>
+<h2> la descripcion del producto es: {{celular.description}}</h2>
+
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
 
     {% endfor %}
 

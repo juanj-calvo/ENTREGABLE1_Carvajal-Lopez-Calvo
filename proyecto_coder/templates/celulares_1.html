@@ -2,17 +2,37 @@
 
 {% block titulo %}
 
-    lista de celulares
+lista de celulares
 
 {% endblock %}
+
 por que no se ve nada ?????
+
 {% block contenido_que_cambia %}
+no se ve nada ???
+<h1>por que no veo nada :(</h1>
+<h2>esta es la lista de productos</h2>
 
-    {% for celular in Celphone %}
 
 
-        <h1>completar....</h1>
+{% for celular in celulares %}
+<h2> el nombre del producto es: {{celular.name}}</h2>
+<h2> el precio del producto es: {{celular.price}}</h2>
+<h2> la descripcion del producto es: {{celular.description}}</h2>
 
-    {% endfor %}
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
+
+
+
+{% endfor %}
+<h3> algo raro pasa por aqui </h3>
 
 {% endblock %}

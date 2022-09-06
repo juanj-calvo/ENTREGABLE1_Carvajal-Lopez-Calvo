@@ -5,7 +5,7 @@ from django.db import models
 
 class Celphone(models.Model):
     name = models.CharField(max_length=40)
-    id =models.FloatField(primary_key=True)
+    id =models.FloatField(primary_key=True,)
     price = models.FloatField()
     brand = models.CharField(max_length=40)
     description = models.CharField(max_length=200, null=True, blank=True)
@@ -22,5 +22,5 @@ class Usuarios(models.Model):
     name = models.CharField(max_length=40)
     email = models.CharField(max_length=60)
     password = models.CharField(max_length=50)
-    id = models.FloatField(primary_key=True)
+    id = models.FloatField(primary_key=True,)
     role=models.CharField(max_length=40)
